@@ -1,4 +1,4 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
@@ -13,14 +13,14 @@ async def cbguide(_, query: CallbackQuery):
 
 1.) first, add me to your group.
 2.) then promote me as admin and give all permissions except anonymous admin.
-3.) add @{Veez.ASSISTANT_NAME } to your group.
+3.) add @{Visa.ASSISTANT_NAME } to your group.
 4.) turn on the voice chat first before start to stream video.
 5.) type /vplay (reply to video) to start streaming.
 6.) type /vstop to end the video streaming.
 
 📝 **note: stream & stop command can only be executed by group admin only!**
 
-⚡ __Maintained by Veez Project Team__""",
+⚡ __Maintained by Visa Project Team__""",
         reply_markup=InlineKeyboardMarkup(
             [[
                 InlineKeyboardButton(
@@ -37,7 +37,7 @@ async def cbstart(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [[
                 InlineKeyboardButton(
-                    "➕ Add me to your Group ➕", url=f"https://t.me/{Veez.BOT_USERNAME}?startgroup=true")
+                    "➕ Add me to your Group ➕", url=f"https://t.me/{Visa.BOT_USERNAME}?startgroup=true")
             ], [
                 InlineKeyboardButton(
                     "❔ HOW TO USE THIS BOT", callback_data="cbguide")
@@ -46,12 +46,12 @@ async def cbstart(_, query: CallbackQuery):
                     "🌐 Terms & Condition", callback_data="cbinfo")
             ], [
                 InlineKeyboardButton(
-                    "💬 Group", url="https://t.me/VeezSupportGroup"),
+                    "💬 Group", url="https://t.me/Visa_Support"),
                 InlineKeyboardButton(
-                    "📣 Channel", url="https://t.me/levinachannel")
+                    "📣 Channel", url="https://t.me/VisaBots")
             ], [
                 InlineKeyboardButton(
-                    "👩🏻‍💻 Developer", url="https://t.me/dlwrml")
+                    "👩🏻‍💻 Developer", url="https://t.me/CALL_ME_VP")
             ], [
                 InlineKeyboardButton(
                     "📚 All Command List", callback_data="cblist")
@@ -71,6 +71,7 @@ Client Library and Framework in Pure Python for Users and Bots.__
 
 👨🏻‍💻 __Thanks to the developers who participated in the development of this bot, the list of devs can be seen below:__
 
+👩🏻‍✈️ » [CALL ME VP](https://github.com/callmevp)
 👩🏻‍✈️ » [Levina Shavila](https://github.com/levina-lab)
 🤵🏻 » [Sammy-XD](https://github.com/Sammy-XD)
 🤵🏻 » [Zxce3](https://github.com/Zxce3)
@@ -121,7 +122,7 @@ async def cblist(_, query: CallbackQuery):
 » /rmw - remove all downloaded raw files
 » /leaveall - order assistant leave from all group
 
-⚡ __Maintained by Veez Project Team__""",
+⚡ __Maintained by Visa Project Team__""",
         reply_markup=InlineKeyboardMarkup(
             [[
                 InlineKeyboardButton(
