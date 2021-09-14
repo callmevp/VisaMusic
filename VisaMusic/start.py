@@ -1,4 +1,4 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 
 from datetime import datetime
 from time import time
@@ -33,7 +33,7 @@ async def _human_time_duration(seconds):
     return ', '.join(parts)
 
 
-@Client.on_message(command(["start", f"start@{Veez.BOT_USERNAME}"]))
+@Client.on_message(command(["start", f"start@{Visa.BOT_USERNAME}"]))
 async def start(_, m: Message):
     if m.chat.type == "private":
         await m.reply_text(
@@ -42,7 +42,7 @@ async def start(_, m: Message):
             reply_markup=InlineKeyboardMarkup(
                 [[
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕", url=f"https://t.me/{Veez.BOT_USERNAME}?startgroup=true")
+                        "➕ Add me to your Group ➕", url=f"https://t.me/{Visa.BOT_USERNAME}?startgroup=true")
                 ], [
                     InlineKeyboardButton(
                         "❔ HOW TO USE THIS BOT", callback_data="cbguide")
@@ -51,12 +51,12 @@ async def start(_, m: Message):
                         "🌐 Terms & Condition", callback_data="cbinfo")
                 ], [
                     InlineKeyboardButton(
-                        "💬 Group", url="https://t.me/VeezSupportGroup"),
+                        "💬 Group", url="https://t.me/Visa_Support"),
                     InlineKeyboardButton(
-                        "📣 Channel", url="https://t.me/levinachannel")
+                        "📣 Channel", url="https://t.me/VisaBots")
                 ], [
                     InlineKeyboardButton(
-                        "👩🏻‍💻 Developer", url="https://t.me/dlwrml")
+                        "👩🏻‍💻 Developer", url="https://t.me/CALL_ME_VP")
                 ], [
                     InlineKeyboardButton(
                         "📚 All Command List", callback_data="cblist")
@@ -79,7 +79,7 @@ async def start(_, m: Message):
                            )
 
 
-@Client.on_message(command(["alive", f"alive@{Veez.BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["alive", f"alive@{Visa.BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def alive(_, m: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
@@ -90,10 +90,10 @@ async def alive(_, m: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "✨ Group", url=f"https://t.me/VeezSupportGroup"
+                        "✨ Group", url=f"https://t.me/Visa_Support"
                     ),
                     InlineKeyboardButton(
-                        "📣 Channel", url=f"https://t.me/levinachannel"
+                        "📣 Channel", url=f"https://t.me/VisaBots"
                     )
                 ]
             ]
@@ -101,7 +101,7 @@ async def alive(_, m: Message):
     )
 
 
-@Client.on_message(command(["ping", f"ping@{Veez.BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["ping", f"ping@{Visa.BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(_, m: Message):
     sturt = time()
     m_reply = await m.reply_text("pinging...")
@@ -112,7 +112,7 @@ async def ping_pong(_, m: Message):
     )
 
 
-@Client.on_message(command(["uptime", f"uptime@{Veez.BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["uptime", f"uptime@{Visa.BOT_USERNAME}"]) & ~filters.edited)
 @sudo_users_only
 async def get_uptime(_, m: Message):
     current_time = datetime.utcnow()
