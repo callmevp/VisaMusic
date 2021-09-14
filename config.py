@@ -1,4 +1,4 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 
 import os
 from os import path, getenv
@@ -9,7 +9,7 @@ if path.exists("local.env"):
 
 load_dotenv()
 
-class Veez(object):
+class Visa(object):
         admins = {}
         BOT_TOKEN = getenv("BOT_TOKEN", None)
         CHANNEL = int(os.getenv('CHANNEL', 123456))
@@ -18,6 +18,6 @@ class Veez(object):
         SESSION_NAME = getenv("SESSION_NAME", None)
         DURATION_LIMIT = int(getenv("DURATION_LIMIT", "15"))
         SUDO_USERS = list(map(int, getenv("SUDO_USERS").split()))
-        ASSISTANT_NAME = getenv("ASSISTANT_NAME", "tg_video_stream")
-        BOT_USERNAME = getenv("BOT_USERNAME", "veezvidstreambot")
+        ASSISTANT_NAME = getenv("ASSISTANT_NAME", "VisaAssistant")
+        BOT_USERNAME = getenv("BOT_USERNAME", "missvisarobot")
         COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
