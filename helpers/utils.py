@@ -1,4 +1,4 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import ExtractorError
