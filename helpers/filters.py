@@ -1,10 +1,10 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 
 from typing import Union, List
 
 from pyrogram import filters
 
-from config import Veez
+from config import Visa
 
 other_filters = filters.group & ~filters.edited & ~filters.via_bot & ~filters.forwarded
 other_filters2 = filters.private & ~filters.edited & ~filters.via_bot & ~filters.forwarded
