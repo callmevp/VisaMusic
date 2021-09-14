@@ -1,4 +1,4 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 # module by @tofikdn
 
 import requests
@@ -8,7 +8,7 @@ from config import Veez
 from helpers.filters import command
 
 
-@Client.on_message(command(["asupan", f"asupan@{Veez.BOT_USERNAME}"]))
+@Client.on_message(command(["asupan", f"asupan@{Visa.BOT_USERNAME}"]))
 async def asupan(client, message):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/asupan/ptl").json()
@@ -19,7 +19,7 @@ async def asupan(client, message):
         print(ex)
 
 
-@Client.on_message(command(["wibu", f"wibu@{Veez.BOT_USERNAME}"]))
+@Client.on_message(command(["wibu", f"wibu@{Visa.BOT_USERNAME}"]))
 async def wibu(client, message):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/asupan/wibu").json()
@@ -30,7 +30,7 @@ async def wibu(client, message):
         await message.reply_text("failed to get wibu from server...")
 
 
-@Client.on_message(command(["chika", f"chika@{Veez.BOT_USERNAME}"]))
+@Client.on_message(command(["chika", f"chika@{Visa.BOT_USERNAME}"]))
 async def chika(client, message):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/chika").json()
@@ -41,7 +41,7 @@ async def chika(client, message):
         await message.reply_text("failed to get chika from server...")
 
 
-@Client.on_message(command(["truth", f"truth@{Veez.BOT_USERNAME}"]))
+@Client.on_message(command(["truth", f"truth@{Visa.BOT_USERNAME}"]))
 async def truth(_, message):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/truth-en").json()
@@ -52,7 +52,7 @@ async def truth(_, message):
         await message.reply_text("something went wrong...")
 
 
-@Client.on_message(command(["dare", f"dare@{Veez.BOT_USERNAME}"]))
+@Client.on_message(command(["dare", f"dare@{Visa.BOT_USERNAME}"]))
 async def dare(_, message):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/dare-en").json()
@@ -63,7 +63,7 @@ async def dare(_, message):
         await message.reply_text("something went wrong...")
 
 
-@Client.on_message(command(["lyric", f"lyric@{Veez.BOT_USERNAME}"]))
+@Client.on_message(command(["lyric", f"lyric@{Visa.BOT_USERNAME}"]))
 async def lirik(_, message):
     rep = await message.reply_text("🔎 **searching lyrics...**")
     try:
