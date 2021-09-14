@@ -1,7 +1,7 @@
 # Copyright (C) 2021 By VisaMusicProject
 
 # ===========
-# running bot
+# running VisaMusic
 # ===========
 import logging
 import time
