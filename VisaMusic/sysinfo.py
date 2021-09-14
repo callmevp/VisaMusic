@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Veez Project
+# Copyright (C) 2021 Visa Project
 
 import platform
 import re
@@ -14,7 +14,7 @@ from helpers.filters import command
 
 # FETCH SYSINFO
 
-@Client.on_message(command(["sysinfo", f"sysinfo@{Veez.BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["sysinfo", f"sysinfo@{Visa.BOT_USERNAME}"]) & ~filters.edited)
 @sudo_users_only
 async def give_sysinfo(client, message):
     splatform = platform.system()
