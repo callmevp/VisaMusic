@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Veez Project
+# Copyright (C) 2021 Visa Project
 
 from pyrogram import Client, errors
 from pyrogram.types import (
