@@ -1,4 +1,4 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 
 import os
 from pyrogram import Client, filters
@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from helpers.filters import command
 from helpers.decorators import sudo_users_only, errors
 
-downloads = os.path.realpath("bot/downloads")
+downloads = os.path.realpath("VisaMusic/downloads")
 raw = os.path.realpath(".")
 
 @Client.on_message(command(["rmd", "cleardl"]) & ~filters.edited)
