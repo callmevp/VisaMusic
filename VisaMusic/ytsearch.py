@@ -4,7 +4,7 @@
 from pyrogram import Client as app
 from pyrogram.types import Message
 from youtube_search import YoutubeSearch
-from config import Veez
+from config import Visa
 from helpers.filters import command
 
 @app.on_message(command(["search", f"search@{Visa.BOT_USERNAME}"]))
