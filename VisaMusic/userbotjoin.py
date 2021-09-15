@@ -6,7 +6,7 @@ from pyrogram.errors import UserAlreadyParticipant
 from helpers.filters import command
 from helpers.decorators import authorized_users_only, errors
 from VisaMusic.videoplayer import app as USER
-from config import Veez
+from config import Visa
 
 
 @Client.on_message(command(["vjoin", f"vjoin@{Visa.BOT_USERNAME}"]) & ~filters.private & ~filters.bot)
