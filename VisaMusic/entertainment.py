@@ -4,7 +4,7 @@
 import requests
 from pyrogram import Client
 
-from config import Veez
+from config import Visa
 from helpers.filters import command
 
 
