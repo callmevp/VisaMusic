@@ -1,7 +1,7 @@
 # Copyright (C) 2021 By VisaMusicProject
 
 from typing import Dict, List
-from config import Veez
+from config import Visa
 
 
 admins: Dict[int, List[int]] = {}
