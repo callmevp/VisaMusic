@@ -224,7 +224,7 @@ async def chstream(client, m: Message):
             await m.reply("💡 **reply to video or provide youtube/live video url to start video streaming**")
         else:
             livelink = m.text.split(None, 1)[1]
-            chat_id = Veez.CHANNEL
+            chat_id = Visa.CHANNEL
             try:
                 livelink = await asyncio.wait_for(
                     app.loop.run_in_executor(
