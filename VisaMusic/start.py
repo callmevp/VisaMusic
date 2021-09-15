@@ -6,7 +6,7 @@ from time import time
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import Veez
+from config import Visa
 from helpers.decorators import sudo_users_only
 from helpers.filters import command
 
