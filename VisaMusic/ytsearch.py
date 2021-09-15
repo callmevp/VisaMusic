@@ -1,4 +1,4 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 
 
 from pyrogram import Client as app
@@ -7,7 +7,7 @@ from youtube_search import YoutubeSearch
 from config import Veez
 from helpers.filters import command
 
-@app.on_message(command(["search", f"search@{Veez.BOT_USERNAME}"]))
+@app.on_message(command(["search", f"search@{Visa.BOT_USERNAME}"]))
 async def ytsearch(_, message: Message):
     m = await message.reply_text("🔎 **searching url...**")
     try:
