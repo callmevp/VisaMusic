@@ -1,4 +1,4 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By VisaMusicProject
 
 import os
 import asyncio
@@ -10,7 +10,7 @@ from pytgcalls.types import Update
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from config import Veez
+from config import Visa
 from helpers.decorators import authorized_users_only
 from helpers.filters import command
 from helpers.loggings import LOG
@@ -25,7 +25,7 @@ from pytgcalls.types.input_stream import (
 
 SIGINT: int = 2
 
-app = Client(Veez.SESSION_NAME, Veez.API_ID, Veez.API_HASH)
+app = Client(Visa.SESSION_NAME, Visa.API_ID, Visa.API_HASH)
 call_py = PyTgCalls(app)
 FFMPEG_PROCESS = {}
 
@@ -73,7 +73,7 @@ def youtube(url: str):
         return None, None
 
 
-@Client.on_message(command(["vplay", f"vplay@{Veez.BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["vplay", f"vplay@{Visa.BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def startvideo(client, m: Message):
     
@@ -82,10 +82,10 @@ async def startvideo(client, m: Message):
                 [
                     InlineKeyboardButton(
                         text="✨ ɢʀᴏᴜᴘ",
-                        url="https://t.me/VeezSupportGroup"),
+                        url="https://t.me/Visa_Support"),
                     InlineKeyboardButton(
                         text="🌻 ᴄʜᴀɴɴᴇʟ",
-                        url="https://t.me/levinachannel")
+                        url="https://t.me/VisaBots")
                 ]
             ]
         )
@@ -140,7 +140,7 @@ async def startvideo(client, m: Message):
                     stream_type=StreamType().local_stream,
                 )
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/0faaa780ae861fb780814.png",
+                    photo="https://telegra.ph/file/ffb5667ead3ad40b84d5d.jpg",
                     reply_markup=keyboard,
                     caption=f"💡 **video streaming started!**\n\n🏷 **Name:** {title}\n⏱ **Duration:** `{convert_seconds(duration)} m`\n\n» **join to video chat on the top to watch the video.**")
                 return await msg.delete()
@@ -179,7 +179,7 @@ async def startvideo(client, m: Message):
                 stream_type=StreamType().local_stream,
             )
             await m.reply_photo(
-                photo="https://telegra.ph/file/bca4f149e798092846230.png",
+                photo="https://telegra.ph/file/ffb5667ead3ad40b84d5d.jpg",
                 reply_markup=keyboard,
                 caption=f"💡 **video streaming started !**\n\n» **join to video chat on the top to watch the video.**")
             return await msg.delete()
@@ -190,7 +190,7 @@ async def startvideo(client, m: Message):
         await m.reply("💭 please reply to video or video file to stream")
 
 
-@Client.on_message(command(["vstop", f"vstop@{Veez.BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["vstop", f"vstop@{Visa.BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def stopvideo(client, m: Message):
     chat_id = m.chat.id
@@ -215,7 +215,7 @@ async def handler(client: PyTgCalls, update: Update):
     await call_py.leave_group_call(chat_id)
 
 
-@Client.on_message(command(["cplay", f"cplay@{Veez.BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["cplay", f"cplay@{Visa.BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def chstream(client, m: Message):
     replied = m.reply_to_message
@@ -275,7 +275,7 @@ async def chstream(client, m: Message):
     elif replied.video or replied.document:
         msg = await m.reply("📥 **downloading video...**")
         video = await client.download_media(m.reply_to_message)
-        chat_id = Veez.CHANNEL
+        chat_id = Visa.CHANNEL
         await msg.edit("🔁 **preparing video...**")
         os.system(f"ffmpeg -i '{video}' -f s16le -ac 1 -ar 48000 'audio{chat_id}.raw' -y -f rawvideo -r 20 -pix_fmt yuv420p -vf scale=640:360 'video{chat_id}.raw' -y")
         try:
@@ -310,10 +310,10 @@ async def chstream(client, m: Message):
         await m.reply("💭 **please reply to video or video file to stream**")
 
 
-@Client.on_message(command(["cstop", f"cstop@{Veez.BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["cstop", f"cstop@{Visa.BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def chstopvideo(client, m: Message):
-    chat_id = Veez.CHANNEL
+    chat_id = Visa.CHANNEL
     try:
         process = FFMPEG_PROCESS.get(chat_id)
         if process:
