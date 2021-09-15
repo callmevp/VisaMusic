@@ -11,7 +11,7 @@ import glob
 import importlib
 from pathlib import Path
 from pyrogram import Client, idle
-from config import Veez 
+from config import Visa 
 from VisaMusic.videoplayer import app
 from VisaMusic.videoplayer import call_py
 from helpers.loggings import LOG
