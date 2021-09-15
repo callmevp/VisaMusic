@@ -3,7 +3,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
-from config import Veez
+from config import Visa
 
 
 @Client.on_callback_query(filters.regex("cbguide"))
